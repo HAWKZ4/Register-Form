@@ -42,11 +42,10 @@ const Login = () => {
           withCredentials: true,
         }
       );
-      console.log(JSON.stringify(response?.data));
 
       const accessToken = response?.data?.accessToken;
-      const roles = response?.data?.roles;
-      setAuth({ user, pwd, roles, accessToken });
+
+      setAuth({ user, accessToken });
       resetUser();
       setPwd("");
       navigate(from, { replace: true });
